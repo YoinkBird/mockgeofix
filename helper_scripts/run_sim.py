@@ -140,6 +140,7 @@ def start_geofix(args):
                     thread.interrupt_main()
             if s in wlist:
                 s.send("geo fix %f %f\r\n" % (curr_lon, curr_lat))
+                print("geo fix %f %f\n" % (curr_lon, curr_lat))
             time.sleep(UPDATE_INTERVAL)
     except socket.error as ex:
         print(ex)
